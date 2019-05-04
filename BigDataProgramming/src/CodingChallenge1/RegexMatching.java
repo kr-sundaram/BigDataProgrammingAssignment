@@ -92,14 +92,5 @@ public class RegexMatching {
         
         RegexMatching rm = new RegexMatching();
         System.out.println(rm.matchRegexRecursive(str1.toCharArray(),str2.toCharArray()));
-        //System.out.println(rm.matchRegexRecursive("Tusha".toCharArray(),"Tushar*a*b*".toCharArray()));
-        //System.out.println(rm.matchRegexRecursive("".toCharArray(),"a*b*".toCharArray()));
-        //System.out.println(rm.matchRegexRecursive("abbbbccc".toCharArray(),"a*ab*bbbbc*".toCharArray()));
-        //System.out.println(rm.matchRegexRecursive("abbbbccc".toCharArray(),"aa*bbb*bbbc*".toCharArray()));
-        //System.out.println(rm.matchRegexRecursive("abbbbccc".toCharArray(),".*bcc".toCharArray()));
-        //System.out.println(rm.matchRegexRecursive("abbbbccc".toCharArray(),".*bcc*".toCharArray()));
-        //System.out.println(rm.matchRegexRecursive("abbbbccc".toCharArray(),".*bcc*".toCharArray()));
-        //System.out.println(rm.matchRegexRecursive("aaa".toCharArray(),"ab*a*c*a".toCharArray()));
-        //System.out.println(rm.matchRegex("aa".toCharArray(), "a*".toCharArray()));
     }
 }
