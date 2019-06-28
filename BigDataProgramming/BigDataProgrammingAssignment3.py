@@ -18,19 +18,25 @@ while (recheck == False):
                 inp = int(input("With what value would you like to replace your odd number values of the array?"))
                 print("After replacing all odd number values in the array with -1, the new array is : ")
                 print (np.where((my_array%2)==1, inp, my_array))
-                check = input("Would you like to check other exercise? (y/n)")
-                if (check == 'y' or check == 'Y'):
-                    recheck = False
-                    prog = False
-                else:
-                    recheck = True
-                    prog = True
+                
+                a = False
+                while (a==False):
+                    check = input("Would you like to check other exercise? (y/n)")
+                    if (check == 'y' or check == 'Y' or check == 'yes' or check == 'YES'):
+                        recheck = False
+                        prog = False
+                        a = True
+                    elif (check == 'n' or check == 'N' or check == 'no' or check == 'NO'):
+                        print("Please enter correct input")
+                        recheck = True
+                        prog = True
+                        a = False
             
             elif (Exercise == 2):
                 print("Exercise 2 :- How to reshape an array?")
                 number = False
                 while (number == False):
-                    a = int(input("How many elements should be there in the 1D array. (NOTE: Please select an even number)"))
+                    a = int(input("How many elements should be there in the 1D array.\n (NOTE: Please select an even number)"))
                     num = a%2
                     if (num == 0):
                         array = np.arange(a)
@@ -46,13 +52,19 @@ while (recheck == False):
                 # shape array with 5 rows and 2 columns 
                 array = np.arange(a).reshape(row, column)
                 print("\narray reshaped with ",row," rows and ",column," columns : \n", array)
-                check = input("Would you like to check other exercise? (y/n)")
-                if (check == 'y' or check == 'Y'):
-                    recheck = False
-                    prog = False
-                else:
-                    recheck = True
-                    prog = True
+                
+                b = False
+                while (b==False):
+                    check = input("Would you like to check other exercise? (y/n)")
+                    if (check == 'y' or check == 'Y' or check == 'yes' or check == 'YES'):
+                        recheck = False
+                        prog = False
+                        b = True
+                    else:
+                        print("Please enter correct input")
+                        recheck = True
+                        prog = True
+                        b = False
             
             elif (Exercise == 3):
                 print("Exercise 3 :- How to generate custom sequence in numpy without hardcoding?")
@@ -70,13 +82,19 @@ while (recheck == False):
                 d = []
                 d = np.concatenate((b,c), axis =0)
                 print ("Custom Sequence: ",d)
-                check = input("Would you like to check other exercise? (y/n)")
-                if (check == 'y' or check == 'Y'):
-                    recheck = False
-                    prog = False
-                else:
-                    recheck = True
-                    prog = True
+                
+                b = False
+                while (b==False):
+                    check = input("Would you like to check other exercise? (y/n)")
+                    if (check == 'y' or check == 'Y' or check == 'yes' or check == 'YES'):
+                        recheck = False
+                        prog = False
+                        b = True
+                    else:
+                        print("Please enter correct input")
+                        recheck = True
+                        prog = True
+                        b = False
             
             elif (Exercise == 4):
                 print("Exercise 4 :- How to get the common items between two python numpy arrays?")
@@ -95,22 +113,21 @@ while (recheck == False):
                 my_array2 = np.array(my_array2)
                 
                 common = []
-                for i in range (len(my_array1)):
-                    for j in range (len(my_array2)):
-                        if (my_array1[i]==my_array2[j]):
-                            number = my_array1[i]
-                            common.append(number)
-                        else:
-                            continue
-                            
+                common = np.intersect1d(my_array1,my_array2)            
                 print("Common items: ",common)
-                check = input("Would you like to check other exercise? (y/n)")
-                if (check == 'y' or check == 'Y'):
-                    recheck = False
-                    prog = False
-                else:
-                    recheck = True
-                    prog = True
+                
+                c = False
+                while (b==False):
+                    check = input("Would you like to check other exercise? (y/n)")
+                    if (check == 'y' or check == 'Y' or check == 'yes' or check == 'YES'):
+                        recheck = False
+                        prog = False
+                        c = True
+                    else:
+                        print("Please enter correct input")
+                        recheck = True
+                        prog = True
+                        c = False
                 
             elif (Exercise == 5):
                 print("Exercise 5 :- How to get the positions where elements of two arrays match?")
@@ -128,23 +145,21 @@ while (recheck == False):
                     my_array2.append(int(input("\t")))
                 my_array2 = np.array(my_array2)
                 
-                common = []
-                for i in range (len(my_array1)):
-                    for j in range (len(my_array2)):
-                        if (my_array1[i]==my_array2[j]):
-                            number = i
-                            common.append(number)
-                        else:
-                            continue
+                match = (my_array1 == my_array2)
+                print("Index of common items: ",np.where(match==True))
                 
-                print("Position of common items: ",common)
-                check = input("Would you like to check other exercise? (y/n)")
-                if (check == 'y' or check == 'Y'):
-                    recheck = False
-                    prog = False
-                else:
-                    recheck = True
-                    prog = True
+                d = False
+                while (d==False):
+                    check = input("Would you like to check other exercise? (y/n)")
+                    if (check == 'y' or check == 'Y' or check == 'yes' or check == 'YES'):
+                        recheck = False
+                        prog = False
+                        d = True
+                    else:
+                        print("Please enter correct input")
+                        recheck = True
+                        prog = True
+                        d = False
             
             elif (Exercise == 6):
                 print("Exercise 6 :- How to create a 2D array containing random floats between 5 and 10?")
@@ -175,13 +190,19 @@ while (recheck == False):
                 # shape array with 5 rows and 2 columns
                 my_array = my_array.reshape(row, column) 
                 print("\narray reshaped with ",row," rows and ",column," columns : \n", my_array)
-                check = input("Would you like to check other program? (y/n)")
-                if (check == 'y' or check == 'Y'):
-                    recheck = False
-                    prog = False
-                else:
-                    recheck = True
-                    prog = True
+                
+                c = False
+                while (c==False):
+                    check = input("Would you like to check other exercise? (y/n)")
+                    if (check == 'y' or check == 'Y' or check == 'yes' or check == 'YES'):
+                        recheck = False
+                        prog = False
+                        c = True
+                    else:
+                        print("Please enter correct input")
+                        recheck = True
+                        prog = True
+                        c = False
 
             elif (Exercise == 7):
                 print("Exercise 7 :- How to limit the number of items printed in output of numpy array to 6?")
@@ -193,13 +214,19 @@ while (recheck == False):
                 my_array = np.array(my_array)
                 np.set_printoptions(threshold=6)
                 print(np.floor(my_array))
-                check = input("Would you like to check other exercise? (y/n)")
-                if (check == 'y' or check == 'Y'):
-                    recheck = False
-                    prog = False
-                else:
-                    recheck = True
-                    prog = True
+                
+                b = False
+                while (b==False):
+                    check = input("Would you like to check other exercise? (y/n)")
+                    if (check == 'y' or check == 'Y' or check == 'yes' or check == 'YES'):
+                        recheck = False
+                        prog = False
+                        b = True
+                    else:
+                        print("Please enter correct input")
+                        recheck = True
+                        prog = True
+                        b = False
             
             elif (Exercise == 8):
                 print("Execise 8 :- How to pretty print a numpy array by suppressing the scientific notation like (1e10)?")
@@ -214,13 +241,19 @@ while (recheck == False):
                 pres = int(input("Precision Value : "))
                 np.set_printoptions(precision = pres, suppress=True)
                 print ("Array after providing the precision value and suppression : \n", random_array)
-                check = input("Would you like to check other exercise? (y/n)")
-                if (check == 'y' or check == 'Y'):
-                    recheck = False
-                    prog = False
-                else:
-                    recheck = True
-                    prog = True
+                
+                a = False
+                while (a==False):
+                    check = input("Would you like to check other exercise? (y/n)")
+                    if (check == 'y' or check == 'Y' or check == 'yes' or check == 'YES'):
+                        recheck = False
+                        prog = False
+                        a = True
+                    else:
+                        print("Please enter correct input")
+                        recheck = True
+                        prog = True
+                        a = False
             
             elif (Exercise == 9):
                 print("Exercise 9 :- How to swap two columns in a 2D numpy array?")
@@ -233,13 +266,19 @@ while (recheck == False):
                 my_array[:,[a, b]] = my_array[:,[b, a]]
                 print("\nAfter swapping of columns, our new array is : ")
                 print(my_array)
-                check = input("Would you like to check other exercise? (y/n)")
-                if (check == 'y' or check == 'Y'):
-                    recheck = False
-                    prog = False
-                else:
-                    recheck = True
-                    prog = True
+                
+                c = False
+                while (c==False):
+                    check = input("Would you like to check other exercise? (y/n)")
+                    if (check == 'y' or check == 'Y' or check == 'yes' or check == 'YES'):
+                        recheck = False
+                        prog = False
+                        c = True
+                    else:
+                        print("Please enter correct input")
+                        recheck = True
+                        prog = True
+                        c = False
 
             elif (Exercise == 10):
                 print("Exercise 10 :- How to swap two rows in a 2D numpy array?")
@@ -252,13 +291,19 @@ while (recheck == False):
                 my_array[[a, b],:] = my_array[[b, a],:]
                 print("\nAfter swapping of rows, our new array is : ")
                 print(my_array)
-                check = input("Would you like to check other exercise? (y/n)")
-                if (check == 'y' or check == 'Y'):
-                    recheck = False
-                    prog = False
-                else:
-                    recheck = True
-                    prog = True
+                
+                c = False
+                while (c==False):
+                    check = input("Would you like to check other exercise? (y/n)")
+                    if (check == 'y' or check == 'Y' or check == 'yes' or check == 'YES'):
+                        recheck = False
+                        prog = False
+                        c = True
+                    else:
+                        print("Please enter correct input")
+                        recheck = True
+                        prog = True
+                        c = False
 
         else:
             print("Entered exercise number does not exist. Please enter the value between 1 and 10.")
